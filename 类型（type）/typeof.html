@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        //typeof 两种写法：
+        // typeof() , typeof+空格
+        // 这两种写法都可以
+
+        // typeof 操作符可以返回六个值：
+        // number、string、boolean、object、undefined、function
+
+        // 1、2、3、前三种是基础值
+        var a = 123;
+        console.log(typeof a);  // number
+        a = "123";
+        console.log(typeof a);  // string
+        a = true;
+        console.log(typeof a);  // boolean
+
+
+        // 4、object
+        // 注意，这里的object 不是指的单纯的对象，指的是泛泛的引用值
+        a = {};
+        console.log(typeof a);  // object
+        // 数组返回的也是 object
+        a = [1,2,3];
+        console.log(typeof a);  // object
+        // null 也是返回的object，null确实是原始值类型不假，
+        // 但是最早是用来指代空对象，给对象占位的。
+        a = null;
+        console.log(typeof a);  // object
+
+        // 5、undefined
+        a = undefined;
+        console.log(a); // undefined
+
+        // 6、function
+        a = function () {
+        };
+        console.log(typeof a);  // function
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

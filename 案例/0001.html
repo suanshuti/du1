@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        function Person(name, age,sex) {
+            var a = 0;
+            this.name=name;
+            this.age=age;
+            this.sex=sex;
+            function sss() {
+                a++;
+                document.write(a);
+            }
+            this.say = sss;
+        }
+
+        // 执行一次Person函数，产生一个Person 的AO1
+        // AO1 被person1.say持有。形成闭包
+        var person1 = new Person();
+        person.say();   // 1
+        person.say();   // 2
+
+        // 又执行一次Person函数，产生一个新的Person 的AO2
+        // AO2 被person2.say持有。形成一个新的闭包
+        var person2 = new Person();
+        person2.say();  // 1
+
+        /*
+        案例分析：
+        本例的核心关键是闭包，还有构造函数。每new一次，其实就是执行一次Person函数，
+        执行结果返回的this对象，其持有的say方法，其实就是函数sss 被返回到外部。
+        每创建一个新对象，其实也同时形成了一个新闭包，对象里的方法持有的是每次执行Person 函数的AO。
+        这些AO 各自是独立的。所以这些被创建出的对象，他们闭包里的数据也是独立的，不会相互污染。
+        */
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

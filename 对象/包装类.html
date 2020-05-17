@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        //1.
+        var num = 123;
+        num.abc = 'a';  // 原始值不能有属性
+        console.log(typeof num);    // number
+        console.log(num.abc); // undefined
+
+        // 2.使用包装类，将num 包装成值为123的数字对象
+        num = new Number(123);
+        console.log(typeof num);    // object
+        num.abc = 'a';  // 包装类对象可以有属性
+        console.log(num.abc); // a
+        console.log(num); // Number {123, abc: "a"}
+
+        // 3. 包装类对象还保有原始值的特性，可以直接参加运算
+        var result = num * 2;
+        console.log(result); // 246
+        // 运算后的结果是原始值，而不是包装类对象
+        console.log(typeof result); // number
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

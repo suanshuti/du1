@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        // eg.1
+        console.log("----------eg.1----------"); 
+        var test1 = function () {
+            var a = 123;
+            console.log(a); // 123
+        }();
+
+        console.log(test1);  // undefined
+        // test(); // Uncaught TypeError: test is not a function
+
+
+        // eg.2
+        console.log("----------eg.2----------"); 
+        + function test2() {
+            var a = 123;
+            console.log(a);
+        }();
+
+        // console.log(test2);  // Uncaught ReferenceError: test2 is not defined
+        // test2(); // Uncaught TypeError: test is not a function
+
+
+        // eg.3
+        console.log("----------eg.3----------"); 
+        // if语句里的f 就是函数表达式，
+        // 虽然没有被调用，但也可以看作“被执行了”，
+        // 其实本来就是执行了，只是并不是“调用”的那种执行。
+        // 因为可以试想，如果没有被执行的话，那么后面的代码也就同样不会被执行。
+        var x = 1;
+        if (function f() { }) { 
+            x += typeof f;
+        }
+        console.log(x); // 1undefined
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

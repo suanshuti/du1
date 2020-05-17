@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        function Father() {
+            this.fortune = {
+                card1: 'visa'
+            }
+        }
+        var father = new Father()
+
+        Son.prototype = father;
+        function Son() {
+        }
+        var son = new Son();
+
+        // 后代对象与原型对象的属性是一致的
+        console.log(father.fortune.card1);  // visa
+        console.log(son.fortune.card1); // visa
+
+        // 通过对象是否可以修改原型属性
+
+        // 1. 如果通过后代对象，是无法“直接”修改“属性本身”
+        // son.fortune = 'son.fortune';
+        // console.log(son.fortune);   //  son.fortune
+        // console.log(son.fortune.card1); // undefined
+        // console.log(father.fortune.card1);  // visa
+
+        // 2. 如果通过原型中引用值类型“属性的属性”，可以“间接”达到修改的目的。
+        // son.fortune.card1 = 'master';
+        // console.log(son.fortune);   //  {card1: "master"}
+        // console.log(son.fortune.card1); // master
+        // console.log(father.fortune.card1);  // master
+
+        // 3. 还可以间接的给原型对象的属性添加新属性
+        son.fortune.card2 = 'UnionPay';
+        console.log(son.fortune.card2); // UnionPay
+        console.log(father.fortune.card2);  // UnionPay
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

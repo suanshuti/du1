@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+
+        // 显式类型转换
+
+        console.log("--------------Number()-----------------")
+        // 1、用Number() 将其他类型值转成number 类型
+        // 内容为纯数字的字符串可以转换成数字
+        var num = Number("123");
+        console.log(typeof num + ": " + num);   // number: 123
+        num = Number("-123");
+        console.log(typeof num + ": " + num);   // number: -123
+        num = Number("123.456");
+        console.log(typeof num + ": " + num);   // number: 123.456
+
+        // 布尔值可以转换数字
+        num = Number(true);
+        console.log(typeof num + ": " + num);   // number: 1
+        num = Number(false);
+        console.log(typeof num + ": " + num);   // number: 0
+
+        // null 也可以被转换成数字
+        num = Number(null);
+        console.log(typeof num + ": " + num);   // number: 0
+
+        // 注意，undefined最特殊，不能被转换成具体数字
+        num = Number(undefined);
+        console.log(typeof num + ": " + num);   // number: NaN
+
+        // 一些看起来就不是数字的值，也不能被转换成具体数字
+        num = Number("a");
+        console.log(typeof num + ": " + num);   // number: NaN
+        num = Number("abc123");
+        console.log(typeof num + ": " + num);   // number: NaN
+
+        console.log("--------------parseInt(arg1)-----------------")
+
+        // 2、用parseInt() 将其他类型（中的数字）值转换成整型值（十进制）
+        num = parseInt("123");
+        console.log(typeof num + ": " + num);   // number: 123
+        num = parseInt("-123");
+        console.log(typeof num + ": " + num);   // number: -123
+        num = parseInt("123.456");
+        console.log(typeof num + ": " + num);   // number: 123
+        num = parseInt("-123.456");
+        console.log(typeof num + ": " + num);   // number: 123
+
+        // 布尔值不再可以转换数字
+        num = parseInt(true);
+        console.log(typeof num + ": " + num);   // number: NaN
+        num = parseInt(false);
+        console.log(typeof num + ": " + num);   // number: NaN
+
+        // null 也不再可以被转换成数字
+        num = parseInt(null);
+        console.log(typeof num + ": " + num);   // number: NaN
+
+        // undefined 依旧不能被转换成具体数字
+        num = parseInt(undefined);
+        console.log(typeof num + ": " + num);   // number: NaN
+
+        // 会把“开头含有数字”的字符串的“数字值部分”转换成数字值
+        num = parseInt("123abc");
+        console.log(typeof num + ": " + num);   // number: 123
+        num = parseInt("-123.456abc");
+        console.log(typeof num + ": " + num);   // number: -123
+        num = parseInt("abc123.456abc");
+        console.log(typeof num + ": " + num);   // number: NaN
+
+        console.log("--------------parseInt(arg1,arg2)-----------------")
+        //注意！parseInt(arg1,arg2)有可以有两个参数，
+        // arg2可以指定arg1中的数字值的进制，如果不设置默认arg1为十进制。
+        // 而如果设置了arg2，假设为十六进制，原本一些十进制不是数字的值，
+        //  在十六进制中，是可以表示数值的，即：A、B、C、D、E、F
+        num = parseInt("abc",16);
+        console.log(typeof num + ": " + num);   // number: 2748
+        num = parseInt("123abc",16);
+        console.log(typeof num + ": " + num);   // number: 1194684
+        num = parseInt("-123.456abc",16);
+        console.log(typeof num + ": " + num);   // number: -291
+
+
+        console.log("--------------parseFloat(arg)-----------------")
+        // 2、parseFloat() 将其他类型（中的数字）值转换成浮点型值（十进制）
+        // parseFloat()和parseInt 类似，不同的是：小数点符号“.”也在取值范围内。
+        // 另外，parseFloat 只有一个参数
+        num = parseFloat("123");
+        console.log(typeof num + ": " + num);   // number: 123
+        num = parseFloat("-123");
+        console.log(typeof num + ": " + num);   // number: -123
+        num = parseFloat("123.456");
+        console.log(typeof num + ": " + num);   // number: 123.456
+        num = parseFloat("-123.456abc");
+        console.log(typeof num + ": " + num);   // number: -123.456
+
+
+        console.log("--------------String(arg)-----------------")
+        // 3、String()
+        // 什么都会变成字符串
+        var str = 123
+        str = String(123);
+        console.log(typeof str + ": " + str);   // string: 123
+        str = String(true);
+        console.log(typeof str + ": " + str);   // string: true
+        str = String(false);
+        console.log(typeof str + ": " + str);   // string: false
+        str = String(null);
+        console.log(typeof str + ": " + str);   // string: null
+        str = String(undefined);
+        console.log(typeof str + ": " + str);   // string: undefined
+
+
+        console.log("--------------toString(arg)-----------------")
+        // 3、toString()
+        // 也是把什么都会变成字符串，但用法形式不一样
+        var temp = 123;
+        str = temp.toString();
+        console.log(typeof str + ": " + str);   // string: 123
+        temp = true;
+        str = temp.toString();
+        console.log(typeof str + ": " + str);   // string: true
+        temp = false;
+        str = temp.toString();
+        console.log(typeof str + ": " + str);   // string: false
+
+        // 注意：null和undefined，不能用toString()方法，执行时会报错
+        // 错误说明是：它们没有toString这个属性。这点在讲原型时会讲。
+        temp = null;
+        // str = temp.toString();
+        // console.log(typeof str + ": " + str);   // Uncaught TypeError: Cannot read property 'toString' of null
+        temp = undefined;
+        // str = temp.toString();
+        // console.log(typeof str + ": " + str);   // Uncaught TypeError: Cannot read property 'toString' of undefined
+
+        // 所以一般不用toString，而用String()，或者空字符串进行连接运算更简单方便。
+
+        // toString()的应用场景：
+        // 将十进制数转换为其他进制数的字符串：
+        temp = 123;
+        // 将123转换成八进制数（的字符串）
+        num = temp.toString(8);
+        console.log(typeof num + ": " + num);   // string: 173
+
+        // 将123转换成十六进制数（的字符串）
+        num = temp.toString(16);
+        console.log(typeof num + ": " + num);   // string: 7b
+
+        // 案例：
+        num =10000;
+        // 把目标数当成二进制数，并转换成十进制数
+        num = parseInt(num, 2);
+        console.log(typeof num + ": " + num);   // number: 16
+        // 把目标数从十进制转换成十六进制数（的字符串）
+        num = num.toString(16);
+        console.log(typeof num + ": " + num);   // string: 10
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        var mrDeng = {
+            name: "MrDeng",
+            age: 40,
+            sex: "male",
+            health: 100,
+            smoke: function () {
+                // 方法内访问对象属性的方式：
+                /*
+                1. 错误的访问对象属性方式：
+                不能这样写，虽然smoke是meDeng这个对象里面的方法，
+                但是这样依然访问不到当前对象的其他属性。
+                */
+                // health--; // Uncaught ReferenceError: health is not defined
+
+                // 2. 正确的访问方式：
+                // 2.1
+                // mrDeng.health--;
+
+                // 2.2
+                // 和2.1方式一一样
+                this.health--;
+            },
+            drink: function () {
+                console.log('I am drink! cool!');
+                this.health++;
+            }
+        }
+        // 外部访问对象属性
+        mrDeng.age += 1;
+        // 删除一个对象属性，用delete
+        delete mrDeng.age;
+
+
+        function Car() {
+            this.name = 'BMW';
+            this.height = 1400;
+            this.lang = 4900;
+            this.weight = 1000;
+        }
+        var car1 = new Car();
+        var car2 = new Car();
+        console.log(car1);
+        console.log(car2);
+        car1.name = 'Maserati';
+        car2.name = 'Merz';
+        console.log(car1);
+        console.log(car2);
+        
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

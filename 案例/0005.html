@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        // 类型转换
+
+
+        var str = false + 1;
+        document.write(str);
+        var demo = false == 1;
+        document.write(demo);   // false
+
+        if (typeof (a) && -true + (+undefined) + "") {
+            // 相当于 if("undefined" && "NAN")
+
+            document.write('基础扎实');
+        }
+
+        if (11 + "11" * 2 == 33) {
+            document.write('基础扎实');
+        }
+
+        !!" " + !!"" - !!false || document.write('你觉得能打印，你就是猪！');
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

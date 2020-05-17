@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        function f1(a, b) {
+            //一、实参与形参的长度
+            //实参长度：arguments.length
+            console.log("实参长度：" + arguments.length);
+            console.log("实参列表：");
+            console.log("----------");
+            for (var i = 0; i < arguments.length; i++) {
+                console.log(arguments[i]);
+            }
+            console.log("----------");
+
+            //形参
+            //形参长度：函数名.length
+            console.log("形参长度："+f1.length);
+        }
+        f1(1, 2, 3);
+
+        //形参不定长度的好处及用途
+        function sum() {
+            var result = 0;
+            for (var i = 0; i < arguments.length; i++) {
+                result += arguments[i];
+            }
+            console.log("sum: "+result);
+        }
+        sum(1, 2, 3, 4, 5, 6, 7, 8, 9);
+
+
+        //二、形参与实参(arguments)的绑定映射
+        //1、实参与形参的数量一致的情况（二者绑定映射）
+        function f2(a,b) {
+            //arguments[0]
+            a=2; //给形参赋值
+            arguments[0] = 3;//给实参赋值
+            console.log("arguments[0]: "+arguments[0]);//打印的值是最后赋值的3
+            console.log("a: "+a);//打印的值是最后赋值的3
+            //结论：实参和对应形参是绑定的，有映射规则保证他们两个一致，
+            // 一个的值发生改变，另外也会跟着变。
+            //但注意：二者是绑定关系，虽然保持一致，但并不是同一个变量！
+
+        }
+        f2(1,2);
+
+        //2、实参数量少于形参的情况（二者不会绑定映射）
+        function f2(a,b) {
+            //argument[1]
+            b = 6;
+            console.log("arguments[1]: "+arguments[1]);//undefined
+            console.log("b: "+b);//6
+
+            arguments[1] = 7;
+            console.log("arguments[1]: "+arguments[1]);//7
+            console.log("b: "+b);//6
+
+            b = 8;
+            console.log("arguments[1]: "+arguments[1]);//7
+            console.log("b: "+b);//8
+        }
+        f2(1);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

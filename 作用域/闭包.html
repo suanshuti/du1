@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        //1. 认识闭包
+        function a() {
+            function b() {
+                console.log(aaa);
+            }
+
+            var aaa = 123;
+            return b;
+        }
+
+        var glob = 100;
+        var demo = a();
+        demo();
+
+        // 2. 用闭包实现累加器
+        function add() {
+            var count = 0;
+            function f() {
+                count++;
+                console.log(count);
+            }
+            return f;
+        }
+        var counter = add();
+        counter();
+        counter();
+        counter();
+        counter();
+        counter();
+
+        // 3. 做缓存
+        // 3.1
+        function cache() {
+            var num = 100;
+            function a() {
+                num++;
+                console.log(num);
+            }
+            function b() {
+                num--;
+                console.log(num);
+            }
+            return [a, b];
+        }
+        var myArr = cache();
+        myArr[0](); // 101
+        myArr[1](); // 100
+
+        // 3.2
+        function eater() {
+            var food = "";
+            var obj = {
+                eat: function () {
+                    console.log("I am eating " + food);
+                    food = "";
+                },
+                push: function (myFood) {
+                    food = myFood;
+                }
+            }
+            return obj;
+        }
+        var eater1 = eater();
+        eater1.push('banana');
+        eater1.eat();
+
+        // 4. 可以实现封装，属性私有化
+        function Person(firstName, lastName) {
+            var name = "";
+            this.firstName = firstName;
+            this.lastName = lastName;
+            name = firstName + "." + lastName;
+            this.sayName = function () {
+                console.log(name);
+            }
+        }
+        var zhangsan  = new Person("san","zhang");
+        var lisi = new Person("si","li");
+
+        console.log(zhangsan.name); 
+        zhangsan.sayName();
+        console.log(lisi.name);
+        lisi.sayName();
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

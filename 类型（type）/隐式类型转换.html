@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        // 隐式类型转换的内部，其实是调用了显示类型转换的方法
+
+        // 一、加减乘除运算中的隐式类型转换
+        // 有字符串数字参与的算术运算：
+        // 1、+ 号的表达式结果是字符串，因为任何类型的值和字符串相加，
+        // 都是连接运算，得到的结果都是字符串
+        var a = "2" + "1";
+        console.log(typeof a + " : " + a);  // string : 21
+        a = 2 + "1";
+        console.log(typeof a + " : " + a);  // string : 21
+        // vs
+        // 2、其他的-、*、/ 运算都会得到number类型的结果（即转换成number类型进行运算）
+        // 1）如果字符里面为纯的数字，将会转换为数字值进行运算
+        a = "2" - "1";
+        console.log(typeof a + " : " + a);  // number : 1
+        a = 2 - "1";
+        console.log(typeof a + " : " + a);  // number : 1
+        a = "2" * "1";
+        console.log(typeof a + " : " + a);  // number : 2
+        a = 2 * "1";
+        console.log(typeof a + " : " + a);  // number : 2
+        a = "2" / "1";
+        console.log(typeof a + " : " + a);  // number : 2
+        a = 2 / "1";
+        console.log(typeof a + " : " + a);  // number : 2
+        // 2）如果有字母或者特殊符号，将会出现NaN
+        a = 2 - "1a";
+        console.log(typeof a + " : " + a);  // number : NaN
+        a = 2 * "1a";
+        console.log(typeof a + " : " + a);  // number : NaN
+        a = 2 / "1a";
+        console.log(typeof a + " : " + a);  // number : NaN
+
+
+        // 二、isNaN
+        console.log("-------------isNaN()------------");
+        // isNaN() 内部调用的是Number() 进行转换，然后把转换的结果再和NaN进行比对。
+        console.log(isNaN(123));  // false
+        console.log(isNaN("123"));  // false
+        console.log(isNaN(123.456));  // false
+        console.log(isNaN("123.456"));  // false
+        console.log(isNaN(null));  // false
+
+        console.log(isNaN("abc"));  // true
+        console.log(isNaN(undefined));  // true
+        console.log(isNaN(NaN));  // true
+        console.log(isNaN("NaN"));  // true
+
+
+        console.log("-------------其他算术运算------------");
+        // 三、其他的运算
+        console.log(true + 1);  // 2
+        console.log(false + 1);  // 1
+        console.log(null + 1);  // 1
+        console.log(undefined + 1);  // NaN
+        console.log(NaN + 1);  // NaN
+
+        console.log(1 == "1");    // true
+        console.log(10 > 100 > 0);  // false
+        console.log(undefined > 0); // false
+        console.log(undefined < 0); // false
+        console.log(undefined == 0); // false
+        console.log(null > 0); // false
+        console.log(null < 0); // false
+
+        //注意！！！！：这里是最特殊的，系统就是这么定义的，
+        //而并不是用用Number(null)，先进行转换的。
+        console.log(null == 0); // false
+        console.log(null == undefined); // true
+
+        // NaN是唯一一个自己不等于自己的值！！（非数自己都不等于自己，更不可能等于其他值）：
+        console.log(NaN == NaN); // false
+
+
+        // 不发生类型转换的比较运算：===（绝对等于）、!==（绝对不等于）
+        console.log(1 == "1");    // true
+        //vs
+        console.log(1 === "1"); // false
+
+        // 一个没有定义过的变量名
+        //注意！！:not defined 和undefined 是两码事，
+        // not defined：是没有声明过
+        // 和undefined：没有被赋值过
+        //案例：
+        // console.log("abc: " + abc);   // Uncaught ReferenceError: abc is not defined
+        // 注意这里，虽然上句abc会报错，但是这里加上typeof 运算之后，会是undefined
+        var bcd;
+        console.log(bcd); // undefined
+        // 这里也比较特别：虽然not defined 和undefined 不同，
+        // 但是typeof 的结果都是undefined，
+        // 而且not defined 的变量名，只有在和typeof 放在一起的时候才不报错。
+        console.log("abc: " + typeof abc);   // undefined
+        console.log(typeof abc == typeof bcd);  // true
+
+        // 四、typeof 的返回值类型string。
+        console.log(typeof( typeof (abc)));  // string
+        console.log(typeof( typeof (bcd)));  // string
+        console.log(typeof( typeof (123)));  // string
+        console.log(typeof( typeof ("abc")));  // string
+        console.log(typeof( typeof (true)));  // string
+        console.log(typeof( typeof (null)));  // string
+        console.log(typeof( typeof (undefined)));  // string
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

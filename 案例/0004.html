@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+
+        Person.prototype = {
+            height :100
+        }
+        function Person(name, age, sex) {
+            
+            this.eat = function () {
+                this.height++;
+                return this.height;
+            }
+        }
+        var person = new Person();
+
+        person.eat()
+        console.log(person.height);  // 101
+        console.log(person.__proto__.height);  // 100
+
+        person.eat()
+        console.log(person.height);  // 102
+        console.log(person.__proto__.height);  // 100
+
+        person.eat()
+        console.log(person.height);  // 103
+        console.log(person.__proto__.height);  // 100
+
+        person.eat()
+        console.log(person.height);  // 104
+        console.log(person.__proto__.height);  // 100
+
+        person.eat()
+        console.log(person.height);  // 105
+        console.log(person.__proto__.height);  // 100
+        person.eat()
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

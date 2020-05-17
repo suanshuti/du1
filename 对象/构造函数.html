@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+
+        // 默认的constructor属性：
+        // 1. 原型创建方式对constructor 属性的影响
+        // 这种方式定义原型，构造方法会被隐式的定义为函数Car
+        // Car.prototype.carName = 'BMW';
+        // Car.prototype.height = 1400;
+        // Car.prototype.lang = 4900;
+
+        // 这种方式定义原型，构造方法会被隐式的定义为函数Object
+        Car.prototype = {
+            carName: 'B',
+            height: 140,
+            lang: 4900
+        }
+        function Car(color, owner) {
+            this.owner = owner;
+            this.color = color;
+        }
+
+        var car = new Car('red', 'prof.ji');
+
+        console.log(car.constructor);
+
+        // constructor 可以人为手动改变
+        // function Bus(){
+
+        // }
+        // Car.prototype.constructor = Bus;
+        // console.log(car.constructor);
+
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

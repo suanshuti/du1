@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        //1、彼此独立的函数，不能访问对方内部的变量
+        function f1() {
+            var a = 123;
+        }
+
+        function f2() {
+            //访问不到在f1 中定义的变量a
+            console.log(a); // Uncaught ReferenceError: a is not defined
+        }
+
+        //2、函数里面可以访问函数外面的变量，但外面的不可以访问到函数里面的变量，可多层嵌套。
+        function f3() {
+            var a = 123;
+
+            function f4() {
+                var b = 234;
+                console.log("f3.a: " + a);
+            }
+
+            f4();   // f3.a: 123
+            // console.log("f4.b: " + b);  // Uncaught ReferenceError: b is not defined
+        }
+
+        f3();
+
+        //3、里面的函数访问的是外面函数的AO的引用，也就是同一个AO。所以可以改变外部函数的属性值。
+        function a(){
+            function b(){
+                var b =  234;
+                a = 0;  // 在这里把“GO中的属性a” 变成了一个数字值，a不再是个函数。
+            }
+
+            // var a = 123;
+            b();
+            // a不再是个函数，所以无法被调用执行，报错。
+            console.log(a); // Uncaught TypeError: a is not a function
+            a();
+        }
+        var global = 100;
+        a();
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

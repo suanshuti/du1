@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <!--代码块A-->
+    <script>
+        //错误分两种：1、低级错误（语法解析错误） 2、标准错误（逻辑错误
+
+        /*
+        * 标准错误（逻辑错误）：
+        * 出错之前的代码可以执行，同一代码块之后的代码不会再执行。
+        * */
+        var a = 10;
+        console.log(a); //10
+        // var b = 20;
+        console.log(b);  //报错：Uncaught ReferenceError: b is not defined
+
+        var c = 30; //此行及以后的代码不会再被执行。
+        console.log(c);
+    </script>
+
+    <!--代码块B-->
+    <!--代码块A中的错误，只会造成代码块A中的执行中断，而不会对代码B产生中断影响-->
+    <script>
+        console.log(a); //10
+        var c = 30;
+        console.log(c);//30
+    </script>
+</head>
+<body>
+
+</body>
+</html>

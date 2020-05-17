@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>函数声明</title>
+    <script>
+        //函数定义方式
+        //方式一：函数声明
+        function F1() {
+        }
+        //和java等静态强类型编译型语言不一样，
+        // js这种动态弱类型的解释型语言打印的函数并不是一个地址，
+        //而是直接把整个“函数体”打印出来。
+        document.write(F1+"<br/><br/>");
+
+        //方式二：函数表达式：
+        //1、命名函数表达式
+        var F2 = function abc() {
+            document.write("F2()"+"<br/>");
+        }
+        //2、匿名函数表达式
+        var F3 = function  () {
+            document.write("F3()"+"<br/><br/>");
+        }
+        //打印方法体
+        document.write(F2+"<br/>");
+        document.write(F3+"<br/><br/>");
+
+        //总结：1和2两种方式实质上并没有区别，而且一般都使用匿名函数表达式。
+        //所以当我们说到函数表达式的时候，往往就是指的是匿名表达式。
+        //唯两者一的不同之处，在于name属性：
+        document.write(F2.name+"<br/>");
+        document.write(F3.name+"<br/><br/>");
+
+        //命名表达式中的“abc”，其实并没有什么用
+        //因为调用的时候，还是用表达式左边的变量名加符号()，来调用执行
+        F2();
+        F3();
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
