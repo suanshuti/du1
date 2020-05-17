@@ -6,4 +6,60 @@
     @font-face  自定义字体
 */
 
-@import 'reset.css'
+@import "reset.css";
+
+@font-face {
+    font-family: "iconfont";
+    src: url("../font/iconfont.eot");
+    src: url("../font/iconfont.eot?#iefix") format("embedded-opentype"),
+        url("../font/iconfont.woff2") format("woff2"),
+        url("../font/iconfont.woff") format("woff"),
+        url("../font/iconfont.ttf") format("truetype"),
+        url("../font/iconfont.svg#iconfont") format("svg");
+}
+
+.iconfont {
+    font-family: "iconfont" !important;
+    font-size: 16px;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+#headMessage li {
+    float: left;
+    line-height: 35px;
+    padding: 0 6px;
+    font-size: 0;
+}
+
+#headMessage a {
+    color: #6c6c6c;
+    font-size: 12px;
+}
+
+#headMessage a:hover {
+    color: #f40;
+}
+
+#headMessage .login {
+    color: #f22e00;
+}
+
+#headMessage span {
+    font-size: 12px;
+}
+
+#headMessage span.arrow {
+    font-size: 12px;
+    margin-left: 7px;
+}
+
+#headMessage li strong {
+    color: #f22e00;
+    font-size: 12px;
+}
+
+#headMessage li span.store {
+    color: #9c9c9c;
+}
