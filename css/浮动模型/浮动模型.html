@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        .wrapper {
+            width: 360px;
+            height: 300px;
+            border: 1px solid black;
+        }
+
+        /* 直接在元素中设置float 属性，可实现左或右浮动 */
+        .content {
+            float: right;
+            color: white;
+            width: 100px;
+            height: 100px;
+            line-height: 100px;
+            text-align: center;
+            background-color: blue;
+        }
+
+        /* J. 浮动的元素，可正常设置margin 属性，
+        且其属性不会出现margin塌陷和margin合并的现象 */
+        .content {
+            margin: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="content">1</div>
+        <div class="content">2</div>
+        <div class="content">3</div>
+        <div class="content">4</div>
+        <div class="content">5</div>
+        <div class="content">6</div>
+        <div class="content">7</div>
+        <div class="content">8</div>
+        <div class="content">9</div>
+    </div>
+</body>
+
+</html>

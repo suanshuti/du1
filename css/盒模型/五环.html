@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        .plat {
+            position: absolute;
+            width: 380px;
+            height: 196px;
+            left: 50%;
+            top: 50%;
+            margin-left: -190px;
+            margin-top: -98px;
+            border: 1px solid black;
+        }
+
+        .circle1,
+        .circle2,
+        .circle3,
+        .circle4,
+        .circle5 {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            border: 10px solid black;
+            border-radius: 50%
+        }
+
+        .circle1 {
+            left: 0px;
+            top: 0px;
+            border-color: purple;
+        }
+
+        .circle2 {
+            left: 130px;
+            top: 0px;
+            border-color: green;
+            z-index: 1;
+        }
+
+        .circle3 {
+            left: 0260px;
+            top: 0px;
+            border-color: yellow;
+        }
+
+        .circle4 {
+            left: 65px;
+            top: 75px;
+            border-color: red;
+        }
+
+        .circle5 {
+            left: 195px;
+            top: 75px;
+            border-color: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="plat">
+        <div class="circle1"></div>
+        <div class="circle2"></div>
+        <div class="circle3"></div>
+        <div class="circle4"></div>
+        <div class="circle5"></div>
+    </div>
+</body>
+
+</html>

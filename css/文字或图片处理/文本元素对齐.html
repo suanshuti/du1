@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        span {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
+
+        .span1{
+            display: inline-block;
+        }
+        .span2{
+            display: inline-block;
+            font-size: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <span>123</span>呵呵
+    <br>
+    <!-- 文本元素标签内没有文字，则标签外文本会与文本元素底对齐 -->
+    <span class="span1"></span>呵呵
+    <br>
+    <!-- 文本元素标签内一旦有文字，则标签外文本会与文本元素内的文字底对齐 -->
+    <span class="span2">123</span>呵呵
+</body>
+
+</html>

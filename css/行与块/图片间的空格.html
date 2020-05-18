@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            background-color: gray;
+            margin: 0px;
+        }
+        img{
+            width: 200px;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <!-- inline或者inline-block 的元素，都有文字特性：
+        （一到多个）空白字符（包括空格，换行等字符）会被转换为一个空格。 -->
+    <img src="fbb.png">
+    <img src="fbb.png">
+    <img src="fbb.png">
+    <img src="fbb.png">
+
+    <br>
+<!-- 如果要消除img间的这种空白，应该将img标签间的空白字符去除掉，
+    也就是说，此处删除换行字符。 -->
+<img src="fbb.png"><img src="fbb.png"><img src="fbb.png"><img src="fbb.png">
+    
+</body>
+</html>

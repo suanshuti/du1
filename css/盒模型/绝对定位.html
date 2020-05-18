@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        /* 1. absolute 脱离原来的位置进行定位，
+        即其原来的位置会被腾出，让给其他元素。
+        所以：会影响到其他元素（的位置）。 */
+        .demo {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            left: 100px;
+            top: 100px;
+            background-color: green;
+        }
+
+        /* 2. absolute 相对于最近有定位属性的父级元素
+        （无论是absolute，还是relative 属性）进行定位，
+        如果没有这样的父级元素，则相对于文档进行定位。 */
+        .father{
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            left: 100px;
+            top: 100px;
+            background-color: blue;
+       }
+        .grand{
+            width: 400px;
+            height: 400px;
+            left: 100px;
+            top: 100px;
+            background-color: yellow;
+       }
+
+        /* 3. 不设置opsition，没有脱离文档流，只设置left 等属性不起定位作用 */
+        .box {
+            width: 500px;
+            height: 500px;
+            left: 100px;
+            top: 100px;
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="grand">
+        <div class="father">
+            <div class="demo"></div>
+        </div>
+    </div>
+
+
+    <div class="box"></div>
+</body>
+
+</html>

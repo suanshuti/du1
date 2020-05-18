@@ -63,3 +63,9 @@
 #headMessage li span.store {
     color: #9c9c9c;
 }
+
+#headMessage li.line {
+    color: #ddd;
+    font-size: 12px ;
+    margin: 0 5px;
+}

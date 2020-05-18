@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p {
+            width: 300px;
+            border: 1px solid black;
+        }
+
+        /* 单行文本溢出，展示省略号：
+        设置三个属性：
+             white-space: nowrap; //不要换行
+             ovoverflow: hidden; //溢出部分隐藏
+            text-overflow: ellipsis; //溢出文本部分打点
+         */
+        /* p {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        } */
+
+        /* 多行文本，展示省略号 */
+        p {
+            line-height: 1.4em;
+            height: 4.2em;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            background-color: cornflowerblue;
+        }
+    </style>
+</head>
+
+<body>
+    <p>
+        法国议会选举第一轮投票结束，马克龙所在政党领先。
+        法国议会选举第一轮投票结束，马克龙所在政党领先。
+        法国议会选举第一轮投票结束，马克龙所在政党领先。
+        法国议会选举第一轮投票结束，马克龙所在政党领先。
+    </p>
+</body>
+
+</html>

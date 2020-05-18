@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        /* demo1 是相对于自己原来的位置定位 */
+        .demo1 {
+            position: relative;
+            width: 100px;
+            height: 100px;
+            left: 30px;
+            top: 30px;
+            background-color: green;
+        }
+
+        /* demo1 是相对于父级的位置定位 */
+        .demo2 {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            left: 50px;
+            top: 50px;
+            background-color: pink;
+        }
+
+        .father {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            left: 100px;
+            top: 100px;
+            background-color: blue;
+        }
+
+        /* relative “保留”并“相对”自己原来的位置进行定位，
+        即其原有的位置会依然保留，不会让给其他元素。
+        所以：不会影响其他元素（的位置）。 */
+        .grand {
+            position: relative;
+            width: 400px;
+            height: 400px;
+            left: 100px;
+            top: 100px;
+            background-color: yellow;
+        }
+
+        /* 不设置opsition，没有脱离文档流，只设置left 等属性不起定位作用 */
+        .box {
+            width: 500px;
+            height: 500px;
+            left: 100px;
+            top: 100px;
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="grand">
+        <div class="father">
+            <div class="demo1"></div>
+            <div class="demo2"></div>
+        </div>
+    </div>
+
+    <div class="box"></div>
+</body>
+
+</html>

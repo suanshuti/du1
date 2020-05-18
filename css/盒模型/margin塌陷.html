@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        .wrapper {
+            width: 200px;
+            height: 200px;
+            margin-left: 100px;
+            margin-top: 100px;
+            background-color: red;
+        }
+
+        /* margin 塌陷现象：
+        子级元素的margin 相对于父元素，水平方向起作用，而垂直方向没有起作用，
+        这给人的感觉就好像是父级的边界限制，对于子元素来说消失或者塌陷了一样。
+        原因：子级元素和父级元素的垂直margin重合，也就是取二者之一的最大值。 */
+        .content {
+            width: 100px;
+            height: 100px;
+            margin-left: 30px;
+            margin-top: 30px;
+            background-color: blue;
+        }
+
+        /* 解决方式一：
+        给添加border属性
+        强烈不建议此方式！不规范，不专业 */
+        /* .wrapper {
+            border: 1px solid;
+        } */
+
+        /* 解决方式二：
+        触发父级元素的 BFC */
+
+        /* 触发BFC的条件为，给元素设置以下任一属性 */
+        /* .wrapper {
+            overflow: hidden;
+            position:absolute;
+            float: left|right;
+            display: inline-block;
+        } */
+
+      /* J.似乎在子元素中设置float属性也可以 */
+        /* .content {
+            float: left;
+        } */
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="content"></div>
+    </div>
+</body>
+
+</html>

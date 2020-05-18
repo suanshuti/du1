@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        /* 浮动元素产生了浮动流 */
+        .box1 {
+            float: left;
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            opacity: .5;
+        }
+
+        .box2 {
+            overflow: hidden;
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+            opacity: .5;
+        }
+
+        /* 块级元素看不到浮云元素 */
+        .demo {
+            width: 150px;
+            height: 150px;
+            background-color: green;
+        }
+
+        /* 产生了bfc的元素可以看到 */
+        /* 文本元素及文本类元素（含inline属性的元素）也可以看到 */
+        /* 凡是设置了position:absolute、float:left|right属性的，
+        系统内部会将元素设置为inline-block */
+        /* J. 但貌似会先排位同样是浮动流的元素，之后其他的元素才会被排列 */
+        /* J. 似乎同一等级的浮云流会优先排列，并被block元素隔开换行  */
+        img{
+            width: 200px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box1"></div>123
+    <a href="">abc</a>
+    <div class="box1"></div>
+    <div class="box2"></div>
+    <img src="fbb.png">456
+    <a href="">bcd</a>
+    <div class="box1"></div>
+    <div class="box1"></div>
+    <div class="demo"></div>
+</body>
+
+</html>

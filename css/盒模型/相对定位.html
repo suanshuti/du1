@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        /* relative “保留”并“相对”自己原来的位置进行定位，
+        即其原有的位置会依然保留，不会让给其他元素。
+        所以：不会影响其他元素（的位置）。 */
+        .demo {
+            position: relative;
+            width: 100px;
+            height: 100px;
+            left: 30px;
+            top: 30px;
+            background-color: green;
+        }
+
+        /* 不设置opsition，没有脱离文档流，只设置left 等属性不起定位作用 */
+        .box {
+            width: 100px;
+            height: 100px;
+            left: 100px;
+            top: 100px;
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="demo">
+    </div>
+
+    <div class="box"></div>
+</body>
+
+</html>
