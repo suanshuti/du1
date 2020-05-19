@@ -23,7 +23,7 @@ a {
   color: #3c3c3c;
 }
 
-i {
+i {                          
   font-style: normal;
 }
 
@@ -58,7 +58,7 @@ body {
 }
 
 .layer {
-  width: 1190;
+  width: 1190px;
   margin: 0 auto;
 }
 

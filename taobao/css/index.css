@@ -26,6 +26,7 @@
     -moz-osx-font-smoothing: grayscale;
 }
 
+/* --- 头部信息 --- */
 #headMessage li {
     float: left;
     line-height: 35px;
@@ -68,4 +69,22 @@
     color: #ddd;
     font-size: 12px ;
     margin: 0 5px;
+}
+
+/* --- 头部广告 --- */
+#headAd{
+    background-color: #f12f04;
+}
+
+#headAd .go{
+    display: block;
+    padding: 10px 10px 10px 15px;
+}
+
+#headAd .go img{
+    width: 80px;
+    height: 80px;
+}
+#headAd li{
+    float: left; 
 }
