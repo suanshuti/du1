@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+      /* .container 是常规流元素，
+      宽度auto时，等于其外部块的内容盒。 */
+      .container {
+        background-color: turquoise;
+        height: 500px;
+      }
+
+      /*  .left和.right是浮动流元素，
+      宽度auto时，等于其的内容所占大小。 */
+      .left {
+        float: left;
+        background-color: tomato;
+      }
+      .right {
+        float: right;
+        background-color: tomato;
+      }
+      img{
+          width: 200px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="left">adbcddsfsadf</div>
+      <div class="right"><img src="fbb.png" alt=""></div>
+    </div>
+  </body>
+</html>

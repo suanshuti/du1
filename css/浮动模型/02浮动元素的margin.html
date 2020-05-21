@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+      /* .container 是常规流元素，
+      水平margin 为auto时，会吸收其外部块的内容盒的剩余宽度。 */
+      .container {
+        background-color: turquoise;
+        margin: 0 auto;
+        width: 500px;
+        height: 500px;
+      }
+
+      /*  .left是浮动流元素，
+      水平margin auto时，为0 */
+      .left {
+        float: left;
+        background-color: tomato;
+        margin: 0 auto;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="left">adbcddsfsadf</div>
+    </div>
+  </body>
+</html>

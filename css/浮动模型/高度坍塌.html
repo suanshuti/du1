@@ -23,9 +23,19 @@
         }
 
 
-        /* 解决方式一：利用伪元素来清除浮动
+        /* 解决方式一：清除浮动 */
+
+        /* 1.1 利用元素来清除浮动
+        注意：只有块级元素才能清除浮动。
+        些方式一般不建议使用，因为实际项目中，应避免使用多余的元素。 */
+        /* .clearfix {
+            clear: both;
+            display: block;
+        } */
+
+        /* 1.2 利用伪元素来清除浮动
         注意：必须将伪元素设置为block，因为只有块级元素才能清除浮动。 */
-        /* .wrapper::after {
+        /* .wrapperclearfix::after {
             clear: both;
             content: "";
             display: block;
@@ -55,7 +65,7 @@
         这里虽然明确的设置 display: inline 属性，提示中也说，inline 元素宽高无用，
         但是可以看到实际的页面效果是，宽高设置已经起作用，这说明此元素的实际属性，
         已经被系统内部设置为 inline-block。*/
-        span {
+        /* span {
             display: inline;
             position: absolute;
             width: 100px;
@@ -64,15 +74,16 @@
             line-height: 100px;
             text-align: center;
             opacity: .5;
-        }
+        } */
     </style>
 </head>
 
 <body>
-    <div class="wrapper">
+    <div class="wrapperclearfix">
         <div class="content">1</div>
         <div class="content">2</div>
         <div class="content">3</div>
+        <div class="clearfix"></div>
     </div>
 
     <span>123</span>abc
