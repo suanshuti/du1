@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            *{
+                margin: 0;
+                padding: 0;
+            }
+
+            /* 1. brother 和container 的外边距发生了合并，
+            因为它们处于同一个bfc（根元素创造的bfc） */
+            .brother {
+                width: 500px;
+                height: 500px;
+                background: red;
+                margin: 10px;
+            }
+            .container {
+                width: 500px;
+                height: 500px;
+                background: #008c8c;
+                overflow: hidden;
+                margin: 10px;
+            }
+
+            
+            /* 2. child 和container 没有发生外边距合并，
+            也即，没有出现父子元素的高度坍塌。
+            因为它们处于不同的bfc：
+            - container 处于根元素创造的bfc
+            - child 处于container 创造的bfc */
+
+            /* 3. 两个child元素之间的边距发生了合并，
+            因为他们同处于container 创造的bfc */
+            .child {
+                width: 200px;
+                height: 200px;
+                background: blue;
+                margin: 10px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="brother"></div>
+        <div class="container">
+            <div class="child"></div>
+            <div class="child"></div>
+        </div>
+    </body>
+</html>
