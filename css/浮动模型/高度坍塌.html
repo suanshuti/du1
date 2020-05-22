@@ -1,49 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <style>
-        .wrapper {
-            border: 2px blue solid;
-        }
+      .wrapper {
+        border: 2px blue solid;
+        width: 500px;
+      }
 
+      .content {
+        float: left;
+        width: 100px;
+        height: 100px;
+        line-height: 100px;
+        text-align: center;
+        background-color: red;
+        color: white;
+        opacity: 0.5;
+      }
 
-        .content {
-            float: left;
-            width: 100px;
-            height: 100px;
-            line-height: 100px;
-            text-align: center;
-            background-color: red;
-            color: white;
-            opacity: .5;
-        }
+      /* 解决方式一：清除浮动 */
 
-
-        /* 解决方式一：清除浮动 */
-
-        /* 1.1 利用元素来清除浮动
+      /* 1.1 利用元素来清除浮动
         注意：只有块级元素才能清除浮动。
         些方式一般不建议使用，因为实际项目中，应避免使用多余的元素。 */
-        /* .clearfix {
-            clear: both;
-            display: block;
-        } */
+      /* .clearfix {
+        clear: both;
+        display: block;
+      } */
 
-        /* 1.2 利用伪元素来清除浮动
+      /* 1.2 利用伪元素来清除浮动
         注意：必须将伪元素设置为block，因为只有块级元素才能清除浮动。 */
-        /* .wrapperclearfix::after {
+      .clearfix::after {
             clear: both;
             content: "";
             display: block;
-        } */
+        }
 
-        
-
-        /* 解决方式二：设置定位或浮动属性
+      /* 解决方式二：设置定位或浮动属性
         凡是设置了position:absolute、float:left|right属性的元素，
         系统内部会将元素设置为inline-block（J.浏览器的样式面板中还是显示为block或inline）。
         这样的话，外层的元素就可以看到里面的浮动元素了。
@@ -52,20 +48,27 @@
         注意：此方式的包裹效果和方式一不同：
         方式一，解决的思路是靠“清除浮动”，而清除浮动的方式前提是外层元素是块级元素，
         所以其包裹的范围是元素所占大小，即：一行的宽度。
-        方式二，包裹的思路是让外层元素发现内部的浮动元素，具体的办法是将外部元素设置为
-        inline-block。所以其包裹的范围，也是其所占大小，即：根据内容，决定自己的大小。
+        方式二，包裹的思路是让外层元素创建bfc区域，那么在bfc区域内的浮动元素，
+        也会参与到其包含块的自动计算高度中。
         
         两种方式的实际效果，请直接打开页面查看其区别。*/
-        /* .wrapper {
-            float: left;
-        } */
+      /* .clearfix {
+        width: 500px;
+        float: left;
+      } */
 
+      /* 解决方式三：父元素为overflow: hidden
+      实际效果，类似方式一，会占用一行。 */
+      /* .clearfix {
+        width: 500px;
+        overflow: hidden;
+      } */
 
-        /* 顺便试试行级元素：
+      /* 顺便试试行级元素：
         这里虽然明确的设置 display: inline 属性，提示中也说，inline 元素宽高无用，
         但是可以看到实际的页面效果是，宽高设置已经起作用，这说明此元素的实际属性，
         已经被系统内部设置为 inline-block。*/
-        /* span {
+      /* span {
             display: inline;
             position: absolute;
             width: 100px;
@@ -76,17 +79,16 @@
             opacity: .5;
         } */
     </style>
-</head>
+  </head>
 
-<body>
-    <div class="wrapperclearfix">
-        <div class="content">1</div>
-        <div class="content">2</div>
-        <div class="content">3</div>
-        <div class="clearfix"></div>
+  <body>
+    <div class="wrapper clearfix">
+      <div class="content">1</div>
+      <div class="content">2</div>
+      <div class="content">3</div>
+      <!-- <div class="clearfix"></div> -->
     </div>
 
     <span>123</span>abc
-</body>
-
+  </body>
 </html>

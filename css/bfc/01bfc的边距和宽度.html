@@ -1,30 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Document</title>
-        <style>
-           
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .float {
+        width: 200px;
+        height: 200px;
+        background-color: blue;
+        float: left;
+      }
 
-            /* 1. bfc 元素的宽度是相对于其包含块自动适应的，
+      /* 1. bfc 元素的宽度是相对于其包含块自动适应的，
             也就是吸收剩余空间 */
-
-            /* 2. 在浏览器中手动调节margin-left值，
+      /* 2. 在浏览器中手动调节margin-left值，
             观察到：
             1）此时bfc元素虽然是避开了左边的浮动元素，
             2）但是bfc的左边距其实并不是相对于那个相邻浮动元素，
             而是相对于其包含块，即body元素。 */
-            .container {
-                height: 500px;
-                background: #008c8c;
-                overflow: hidden;
-                margin-left: 280px;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="float"></div>
-        <div class="container"></div>
-    </body>
+      .container {
+        height: 500px;
+        background: #008c8c;
+        overflow: hidden;
+        margin-left: 280px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="float"></div>
+    <div class="container"></div>
+  </body>
 </html>
