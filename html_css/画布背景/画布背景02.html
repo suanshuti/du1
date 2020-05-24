@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>画布背景图片的百分比</title>
+        <style>
+            body {
+                width: 3000px;
+                height: 100px;
+                background: url("main_bg.jpg") no-repeat;
+                /* 
+                画布背景图的问题
+                宽度：
+                    1. 画布背景图片的宽度百分比，相对于视口宽度，而非画布(J.设置背景图的元素范围)本身的宽度，这点非常坑。
+                    2. 背景元素就没有这个问题，是正常的。
+                    3. 一般元素的背景图也没有这个问题，是正常的，是相对于包含块的  
+                高度：
+                    1. 画布高度百分比，是相对于元素的高度，而非视口
+                */
+
+
+                background-size: 100% 100%;
+                border: 2px solid #f40;
+            }
+        </style>
+    </head>
+    <body></body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>画布的背景</title>
+        <style>
+            /* html{
+            background-color: lightblue;
+        } */
+
+            /* 如果不给html元素设置背景，那么body的背景将会铺满整个视口，
+            而不会仅于设置的宽高范围内，这是什么原因呢？
+            
+            因为页面的渲染是在一个canvas画面上，canvas的范围最小是等于视口。
+            注意：这个canvas 不是<canvas>元素，而只是画布。
+
+            1. html元素的背景
+                覆盖画布
+            2. body元素的背景
+                如果html元素有背景，body元素正常，其背景覆盖自己的边框盒。
+                如果html元素没有设置背景，body元素的背景覆盖画布。
+            */
+            body {
+                width: 100px;
+                height: 100px;
+                background: blue;
+            }
+        </style>
+    </head>
+    <body></body>
+</html>

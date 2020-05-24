@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>画布背景的位置</title>
+        <style>
+            body {
+                margin-top: 200px;
+                width: 3000px;
+                height: 100px;
+                background: url("main_bg.jpg") no-repeat;
+                /* 
+                画布背景图片的位置
+                1. 画布的水平位置百分比，预设值，都是相对于视口。 
+                2. 背景图的纵向位置百分比、预设值，相对于网页高度。
+                */
+                /* background-position: right; */
+                background-position: 10%;
+                background-size: 50% auto;
+                border: 2px solid #f40;
+            }
+
+            /* 注意：关于画布背景的种种不正常情况，只要给html设置上背景就行了，
+            不要只直接给body设置画面背景，将背景设置在元素范围内，这样才正常。 */
+            /* html{
+                width: 100%;
+                height: 100%;
+                background-color: lightblue;
+            } */
+        </style>
+    </head>
+    <body></body>
+</html>
