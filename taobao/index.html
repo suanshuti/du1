@@ -1,146 +1,182 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <title>淘宝网-淘！你喜欢</title>
-        <link rel="stylesheet" href="css/index.css" />
-        <link rel="icon" href="favicon.ico" />
-        <base href="" target="_blank" />
-    </head>
-    <body>
-        <!-- 
+<html>
+
+  <head>
+    <meta charset="UTF-8" />
+    <title>淘宝网 - 淘！我喜欢</title>
+    <link rel="stylesheet" href="css/index.css" />
+    <link rel="icon" href="favicon.ico" />
+    <base href="" target="_blank" />
+  </head>
+
+  <body>
+    <!-- 
         划分结构的依据：
             内容
             颜色块
             间距
             边框 -->
 
-        <!-- 头部信息 -->
-        <div id="headMessage" class="layer clearfix">
-            <ul class="fl">
-                <li>
-                    <span>中国大陆</span>
-                    <span class="iconfont arrow">&#xe731;</span>
-                </li>
-                <li class="mr7">
-                    <a class="login mr7" href="#">亲，请登录</a>
-                    <a href="#">免费注册</a>
-                </li>
-                <li>
-                    <a href="#">手机逛淘宝</a>
-                </li>
-            </ul>
-            <ul class="fr">
-                <li>
-                    <a href="#">我的淘宝</a>
-                    <span class="iconfont arrow">&#xe731;</span>
-                </li>
-                <li>
-                    <span class="iconfont mr5 c4">&#xe613;</span>
-                    <a href="#">购物车</a>
-                    <strong>0</strong>
-                    <span class="iconfont arrow">&#xe731;</span>
-                </li>
-                <li>
-                    <a href="#"></a>
-                        <span class="iconfont mr5 store">&#xe607;</span>
-                        收藏夹
-                    </a>
-                    <span class="iconfont arrow">&#xe731;</span>
-                </li>
-                <li><a href="#">商品分类</a></li>
-                <li class="line">|</li>
-                <li>
-                    <a href="#">千牛卖家中心</a>
-                    <span class="iconfont arrow">&#xe731;</span>
-                </li>
-                <li>
-                    <a href="#">联系客服</a>
-                    <span class="iconfont arrow">&#xe731;</span>
-                </li>
-                <li>
-                    <span class="iconfont c4 mr5">&#xe612;</span>
-                    <a href="#">网站导航</a>
-                    <span class="iconfont arrow">&#xe731;</span>
-                </li>
-            </ul>
-        </div>
+    <!-- 头部信息 -->
+    <div id="headMessage" class="layer clearfix">
+      <ul class="fl">
+        <li>
+          <span>中国大陆</span>
+          <span class="iconfont arrow">&#xe733;</span>
+        </li>
+        <li class="mr7">
+          <a class="login mr7" href="#">亲，请登录</a>
+          <a href="#">免费注册</a>
+        </li>
+        <li>
+          <a href="#">手机逛淘宝</a>
+        </li>
+      </ul>
+      <ul class="fr">
+        <li>
+          <a href="#">我的淘宝</a>
+          <span class="iconfont arrow">&#xe733;</span>
+        </li>
+        <li>
+          <span class="iconfont mr5 c4">&#xe63a;</span>
+          <a href="#">购物车</a>
+          <strong>0</strong>
+          <span class="iconfont arrow">&#xe733;</span>
+        </li>
+        <li>
+          <a href="#">
+            <span class="iconfont mr5 store">&#x3432;</span>
+            收藏夹
+          </a>
+          <span class="iconfont arrow">&#xe733;</span>
+        </li>
+        <li><a href="#">商品分类</a></li>
+        <li class="line">|</li>
+        <li>
+          <a href="#">千牛卖家中心</a>
+          <span class="iconfont arrow">&#xe733;</span>
+        </li>
+        <li>
+          <a href="#">联系客服</a>
+          <span class="iconfont arrow">&#xe733;</span>
+        </li>
+        <li>
+          <span class="iconfont c4 mr5">&#xe66d;</span>
+          <a href="#">网站导航</a>
+          <span class="iconfont arrow">&#xe733;</span>
+        </li>
+      </ul>
+    </div>
 
-        <!-- 头部广告 -->
-        <div id="headAd">
-            <div class="layer clearfix">
-                <a href="#" class="fl go">
-                    <img src="images/go.png" alt="" />
-                </a>
-                <ul class="fr">
-                    <li class="item1">
-                        <!-- 如果是移动应用，这里通常会使用一层a标签，用于嵌套广告的图片和文字标签，
+    <!-- 头部广告 -->
+    <div id="headAd">
+      <div class="layer clearfix">
+        <a href="#" class="fl go">
+          <img src="images/go.png" alt="" />
+        </a>
+        <ul class="fr">
+          <li class="item1">
+            <!-- 如果是移动应用，这里通常会使用一层a标签，用于嵌套广告的图片和文字标签，
                         以方便手指点击操作，但是web端的，一般不加，因为鼠标操作大屏可以更精确。 -->
-                        <a href="#" class="fr">
-                            <img src="images/adimg_01.jpg" alt="" />
-                        </a>
-                        <!-- 减少嵌套，以利于搜索引擎 -->
-                        <h3><a href="#">电视会场</a></h3>
-                        <p><a href="#">降价2000元</a></p>
-                    </li>
-                    <li class="item2">
-                        <a href="#" class="fr">
-                            <img src="images/adimg_02.jpg" alt="" />
-                        </a>
-                        <h3>
-                            <a href="#">电视会场</a>
-                        </h3>
-                        <p>
-                            <a href="#">降价2000</a>
-                        </p>
-                    </li>
-                    <li class="item3">
-                        <a href="#" class="fr">
-                            <img src="images/adimg_03.jpg" alt="" />
-                        </a>
-                        <h3>
-                            <a href="#">电视会场</a>
-                        </h3>
-                        <p>
-                            <a href="#">降价2000元</a>
-                        </p>
-                    </li>
-                    <li class="item4">
-                        <a href="#" class="fr">
-                            <img src="images/adimg_04.jpg" alt="" />
-                        </a>
-                        <h3>
-                            <a href="#">电视会场</a>
-                        </h3>
-                        <p>
-                            <a href="#">降价2000元</a>
-                        </p>
-                    </li>
-                    <li class="item5">
-                        <a href="#" class="fr">
-                            <img src="images/adimg_05.jpg" alt="" />
-                        </a>
-                        <h3>
-                            <a href="#">电视会场</a>
-                        </h3>
-                        <p>
-                            <a href="#">降价2000元</a>
-                        </p>
-                    </li>
-                </ul>
-            </div>
+            <a href="#" class="fr">
+              <img src="images/adimg_01.jpg" alt="" />
+            </a>
+            <!-- 减少嵌套，以利于搜索引擎 -->
+            <h3><a href="#">电视会场</a></h3>
+            <p><a href="#">最高降2000</a></p>
+          </li>
+          <li class="item2">
+            <a href="#" class="fr">
+              <img src="images/adimg_02.jpg" alt="" />
+            </a>
+            <h3>
+              <a href="#">电视会场</a>
+            </h3>
+            <p>
+              <a href="#">最高降2000</a>
+            </p>
+          </li>
+          <li class="item3">
+            <a href="#" class="fr">
+              <img src="images/adimg_03.jpg" alt="" />
+            </a>
+            <h3>
+              <a href="#">电视会场</a>
+            </h3>
+            <p>
+              <a href="#">最高降2000</a>
+            </p>
+          </li>
+          <li class="item4">
+            <a href="#" class="fr">
+              <img src="images/adimg_04.jpg" alt="" />
+            </a>
+            <h3>
+              <a href="#">电视会场</a>
+            </h3>
+            <p>
+              <a href="#">最高降2000元</a>
+            </p>
+          </li>
+          <li class="item5">
+            <a href="#" class="fr">
+              <img src="images/adimg_05.jpg" alt="" />
+            </a>
+            <h3>
+              <a href="#">电视会场</a>
+            </h3>
+            <p>
+              <a href="#">最高降2000元</a>
+            </p>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 头部搜索 -->
+    <div id="headSearch">
+      <div class="clearfix layer">
+        <!-- <h1><a href="#"><img src="images/logo.png" alt="淘宝网"></a></h1> -->
+        <h1 class="fl"><a href="#">淘宝网</a></h1>
+        <div class="code fr">
+          <span class="iconfont close">&#xe614;</span>
+          <span class="c5">手机淘宝</span>
+          <img src="images/code.png" alt="" />
         </div>
+        <div class="search">
+          <ul class="searchTab clearfix">
+            <li class="active">宝贝</li>
+            <li>天猫</li>
+            <li>店铺</li>
+          </ul>
+          <div class="searchContent">
+            <form action="#">
+              <div class="searchBox fl">
+                <input type="text" />
+                <div class="placeholder">
+                  <i class="iconfont">&#xe615;</i>
+                  <span>网红裤腰带 洋气 国际范 9.9包邮</span>
+                </div>
+                <span class="iconfont imgSearch">&#xe6ba;</span>
+              </div>
+              
+						<div class="btn fl">
+							<button type="submit">搜索</button>
+						</div>
+            </form>
+          </div>
+          <div class="hotKey"></div>
+        </div>
+      </div>
+    </div>
 
-        <!-- 头部搜索 -->
-        <div id="headSearch"></div>
+    <!-- 首屏内容 -->
+    <div id="firstScreen"></div>
 
-        <!-- 首屏内容 -->
-        <div id="firstScreen"></div>
+    <!-- 有好货与爱逛街 -->
+    <div id="layer"></div>
 
-        <!-- 有好货与爱逛街 -->
-        <div id="layer"></div>
-
-        <!-- 右侧固定定位导航 -->
-        <div id="tool"></div>
-    </body>
+    <!-- 右侧固定定位导航 -->
+    <div id="tool"></div>
+  </body>
 </html>
